@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>最基本的写法</title>
+    <title>directives - 引用指令</title>
     <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
 </head>
 <body>
@@ -10,21 +10,29 @@
     <script type="text/typescript">
     // 1 导入组件
     // 2 定义组件
-    // 3 定义一个渲染对象
+    // 3 定义渲染对象
     // 4 启动组件进行渲染
     // 5 使用自定义的dom节点   一定要放在script 标签外  body内
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser"
 
+    @Component({
+        selector:"ez-card",
+        templateUrl:"template/htmlTemplate.html",
+        styleUrls:["template/cssTemplate.css"]
+    })
 
-    	import {Component} from "angular2/core";
-        import {bootstrap} from "angular2/platform/browser";
-
-        @Component({
-			selector:"ez-app",
-        	template : `<h1>Hello,Angular2</h1>`
-        })
-        class EzApp{}
-
-        bootstrap(EzApp);
+    class EzCard{
+    }
+    @Component({
+        selector:"ez-app",
+        directives:[EzCard],
+        template:`
+            <div class="ez-app"><ez-card></ez-card></div>
+        `
+    })
+    class EzApp{}
+    bootstrap(EzApp);
     </script>
 </body>
 </html>

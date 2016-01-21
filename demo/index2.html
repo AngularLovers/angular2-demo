@@ -2,29 +2,52 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>最基本的写法</title>
+    <title>selector选择符</title>
     <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
 </head>
 <body>
-	<ez-app></ez-app>
+    <ez-one></ez-one>
+    <ez-two></ez-two>
+    <ez-three></ez-three>
+    <ez-four></ez-four>
+    <any ez-four='123'></any>
     <script type="text/typescript">
-    // 1 导入组件
-    // 2 定义组件
-    // 3 定义一个渲染对象
-    // 4 启动组件进行渲染
-    // 5 使用自定义的dom节点   一定要放在script 标签外  body内
-
-
-    	import {Component} from "angular2/core";
+        import {Component} from "angular2/core";
         import {bootstrap} from "angular2/platform/browser";
-
+        
+        // 标签选择符
         @Component({
-			selector:"ez-app",
-        	template : `<h1>Hello,Angular2</h1>`
+            selector:"ez-one",
+            template:"this is tag selector"
         })
-        class EzApp{}
+        class EzOne{}
+        bootstrap(EzOne);
 
-        bootstrap(EzApp);
+        // css选择符
+        @Component({
+            selector:".ez-two",
+            template:" this is class selector"
+        })
+        class EzTwo{}
+        bootstrap(EzTwo);
+
+        // 属性选择符
+        @Component({
+            selector:"[ez-three]",
+            template:"this is property selector"
+        })
+        class EzThree{}
+        bootstrap(EzThree);
+
+        // 属性值选择符
+        @Component({
+            selector:"[ez-four=123]",
+            template:"this is property value selector"
+        })
+        class EzFour {}
+        bootstrap(EzFour);
     </script>
+
+
 </body>
 </html>

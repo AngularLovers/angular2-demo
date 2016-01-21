@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>多行模板用` ` 写法没差啦</title>
+    <title>多行模板用 ` ` 单行用 " "</title>
     <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
 </head>
 <body>
@@ -20,12 +20,19 @@
 
         @Component({
 			selector:"ez-app",
-        	template :
-        	 `
-        	<h1>我是第一行</h1>
-        	<h1>我是第二行</h1>
-        	<h1>单行用双引,多行用 飘号</h1>
-        	`
+			//styles 是 key:value 的结构，都不需要加引号
+            styles:[`
+        h1{
+            background:#4dba6c;
+            color:#fff
+        }
+            `]
+            template :
+             `
+            <h1 class="div.ez-greeting">我是第一行</h1>
+            <h1>我是第二行</h1>
+            <h1>单行用双引,多行用 飘号</h1>
+            `,
         })
         class EzApp{}
 

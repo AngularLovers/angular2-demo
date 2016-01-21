@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>最基本的写法</title>
+    <title>引用外部样式和模板</title>
     <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
 </head>
 <body>
@@ -14,17 +14,17 @@
     // 4 启动组件进行渲染
     // 5 使用自定义的dom节点   一定要放在script 标签外  body内
 
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser"
 
-    	import {Component} from "angular2/core";
-        import {bootstrap} from "angular2/platform/browser";
-
-        @Component({
-			selector:"ez-app",
-        	template : `<h1>Hello,Angular2</h1>`
-        })
-        class EzApp{}
-
-        bootstrap(EzApp);
+    @Component({
+        selector:"ez-app",
+        templateUrl:"template/htmlTemplate.html",
+        //注意写法 styleUrls:value 1.需要中括号扩起来 2.需要加引号
+        styleUrls:["template/cssTemplate.css"]
+    })
+    class EzApp{}
+    bootstrap(EzApp);
     </script>
 </body>
 </html>
