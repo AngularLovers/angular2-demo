@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ngClass 样式类</title>
+    <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+cns属性是一个JSON对象，每个键代表样式类名，对应的值为true时表示向HTML元素 添加该样式类，为false时表示删除该样式类
+<hr/>
+<ez-app></ez-app>
+<script type="text/typescript">
+    // 1 导入组件
+    // 2 定义组件
+    // 3 定义一个渲染对象
+    // 4 启动组件进行渲染
+    // 5 使用自定义的dom节点   一定要放在script 标签外  body内
+        //这一节的坑  style是一个数组,它同样可以用飘号 表示多行   定义class 要加上选择符:点  使用内联样式要用中括号把括起来
+       import {Component} from "angular2/core";
+       import {bootstrap} from "angular2/platform/browser";
+
+       @Component({
+        selector:"ez-app",
+        template:`<h1 [ngClass]="cns">我是小莫,我在测试 ngClass</h1>`,
+        styles:[
+        `
+        .colorful{color:red;}
+        .italic{font-style:italic;}
+        .bold{font-weight:bold;}
+        `
+        ]
+       })
+
+       class EzApp{
+            constructor(){
+                this.cns={
+                    colorful:true,
+                    italic:true,
+                    bold:true
+                };
+            }
+        }
+        bootstrap(EzApp);
+
+</script>
+</body>
+</html>

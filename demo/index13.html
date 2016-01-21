@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>ngIf 条件语名</title>
+    <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+	<ez-app></ez-app>
+    <script type="text/typescript">
+    // 1 导入组件
+    // 2 定义组件
+    // 3 定义一个渲染对象
+    // 4 启动组件进行渲染
+    // 5 使用自定义的dom节点   一定要放在script 标签外  body内
+        import {Component} from "angular2/core";
+        import {bootstrap} from "angular2/platform/browser";
+        //这一节的坑  template 多行 用飘号
+        @Component({
+            selector:"ez-reader",
+            properties:["trial"],
+            template:`
+                <img [src]="banner" *ngIf="trial==true" class="banner">
+                <pre>{{content}}</pre>`
+        })
+        class EzReader{
+            constructor(){
+                var self = this;
+                this._trial = true;
+                this.banner="img/banner.jpg";
+                this.content=`没关系，我已经没有放射性了。”史强对坐在旁边的汪森说，“这两天，我让人家像洗面口袋似的翻出来洗了个遍。
+这次会议本来没安排你参加，是我坚决要求请你来的，嘿。我保准咱哥俩这次准能出风头的。”
+
+史强说着，从会议桌上的烟灰缸中拣出一只雪茄屁股，点上后抽一口，点点头，心旷神怡地把烟徐徐吐到对面与会
+者的面前，其中就有这支雪茄的原主人斯坦顿，一名美国海军陆战队上校，他向大史投去鄙夷的目光。
+
+这次与会的有更多的外国军人，而且都穿上了军装。在人类历史上，全世界的武装力量第一次面对共同的敌人。
+
+常伟思将军说：“同志们，这次与会的所有人，对目前形势都有了基本的了解，用大史的话说，信息对等了。人类
+与外星侵略者的战争已经开始，虽然在四个半世纪后，我们的子孙才会真正面对来自异星的三体人侵者，我们现在与之
+作战的仍是人类；但从本质上讲，这些人类的背叛者也可以看成来自地球文明之外的敌人，我们是第一次面对这样的敌人。
+下一步的作战目标十分明确，就是要夺取‘审判日’号上被截留的三体信息，这些信息，可能对人类文明的存亡具有重要
+意义。"`
+            }
+        }
+
+        @Component({
+            selector:"ez-app",
+            directives:[EzReader],
+            template:`
+            <ez-reader [trial]="true"></ez-reader>
+            `
+        })
+           class EzApp{}
+           bootstrap(EzApp);
+    </script>
+</body>
+</html>
