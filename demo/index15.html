@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>ngFor循环 使用</title>
+    <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
+    <style>
+        h2{background:#26a69a;padding:5px;margin:0px;color:white}
+        ul{margin:0px;padding:0px;list-style:none;font-family:Courier;}
+        li{line-height:30px;border-bottom:1px solid #ccc;color:#0f0;}
+    </style>
+</head>
+<body>
+	<ez-app></ez-app>
+    <script type="text/typescript">
+    // 1 导入组件
+    // 2 定义组件
+    // 3 定义一个渲染对象
+    // 4 启动组件进行渲染
+    // 5 使用自定义的dom节点   一定要放在script 标签外  body内
+        import {Component} from "angular2/core";
+        import {bootstrap} from "angular2/platform/browser";
+
+        @Component({
+            selector:"ez-star",
+            template:`
+                <div>
+                    <h2>{{actor}}</h2>
+                    <ul>
+                        <li *ngFor ="#film of films;#i=index">{{i+1}}. {{film}}</li>
+                    </ul>
+                </div>
+            `
+        })
+        class EzStar{
+            constructor(){
+                this.actor="xiaomo";
+                this.films=[
+                "Mechanic: Rescurrection / 2016",
+                "Spy / 2015",
+                "Furious 7 /2015",
+                "Wild Card / 2015",
+                "The Expendables / 2014",
+                "Home Front / 2013",
+                "Hummingbird / 2013",
+                "Fast & Furious 6 / 2013",
+                "Parker / 2013"
+                ];
+            }
+        }
+
+        @Component({
+            selector:"ez-app",
+            directives:[EzStar],
+            template:`
+                <ez-star></ez-star>
+            `
+        })
+
+        class EzApp{}
+
+        bootstrap(EzApp);
+
+    </script>
+</body>
+</html>

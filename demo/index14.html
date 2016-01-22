@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>ngSwitch写法</title>
+    <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+	<ez-app></ez-app>
+    <script type="text/typescript">
+            import {Component} from "angular2/core";
+            import {bootstrap} from "angular2/platform/browser";
+
+            @Component({
+                selector:"ez-promotion",
+                properties:["gender"],
+                template:`
+                    <div [ngSwitch]="gender">
+                        <template ngSwitchWhen="male">
+                            <p>男</p>
+                        </template>
+                         <template ngSwitchWhen="feMale">
+                            <p>女</p>
+                        </template>
+                         <template ngDefault>
+                            <p>随机</p>
+                        </template>
+                    </div>
+                `
+            })
+
+            class EzPromotion{}
+
+            @Component({
+                selector:"ez-app",
+                directives:[EzPromotion],
+                template:`
+                    <ez-promotion gender="feMale"></ez-promotion>
+                `
+            })
+            class EzApp{}
+
+            bootstrap(EzApp);
+
+
+    </script>
+</body>
+</html>
