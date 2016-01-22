@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>最基本的写法</title>
+    <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+<ez-app></ez-app>
+<script type="text/typescript">
+    // 1 导入组件
+    // 2 定义组件
+    // 3 定义一个渲染对象
+    // 4 启动组件进行渲染
+    // 5 使用自定义的dom节点   一定要放在script 标签外  body内
+    import {Component} from "angular2/core";
+    import {bootstrap} from "angular2/platform/browser";
+    import {CORE_DIRECTIVES} from "angular2/common";
+
+    // 这一节的坑  ng的for循环是 a of b  经常会有朋友把of 写成 in
+
+    @Component({
+        selector:"ez-app",
+        template:`
+            <h1>管道 /Pipe</h1>
+            <div *ngFor ="#name of data;#i=index">{{index}}. {{name.name}}:{{name.score}} </div>
+            <hr>
+            <div>{{avgScore() | number:'2.2-2'}}</div>
+        `,
+        directives:[CORE_DIRECTIVES],
+        styles : [`div{max-width:200px;text-align:right;}`]
+    })
+        class EzApp{
+        constructor(){
+            this.data=[
+            {name:'John',score:89},
+            {name:'Mike',score:72},
+            {name:'Linda',score:93.5},
+            {name:'Luke',score:80},
+            {name:'Jango',score:97},
+            {name:'Ado',score:95},
+            {name:'Peter',score:93}
+            {name:'Mary',score:92},
+            {name:'Tom',score:99}]
+              }
+            avgScore(){
+    	        return this.data.map(a=>a.score).reduce((a,b) => a+b , 0) / this.data.length;
+        }
+}
+
+bootstrap(EzApp);
+
+</script>
+</body>
+</html>
