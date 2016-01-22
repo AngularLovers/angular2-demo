@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>管道命令具体用法</title>
+    <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
+</head>
+<body>
+管道参数
+<hr/>
+slice   截取 格式 data |slice:start:end  不要把参数用引号包起来  {{ '01234567890' | slice:1:4 }} <br/>
+<hr/>
+number 2.2-2 保留小数(要处理的数字不要用引号，不然会被当成字符串，它只能对数字进行操作)  {{avgScore() | number:'2.2-2'}} <br/>
+<hr/>
+data  yyyyMMYDD 格式化 时间格式具体去baidu  {{ day | data:'yyMMdd'}}<br/>
+<hr/>
+json    转成json {{ {x:1,y:2} | json }} <br/>
+<hr/>
+percent 转换成百分比  {{ 1.23456 | percent:'1.2-3' }}<br/>
+<hr/>
+uppercase 大写转换  {{ "this is a demo" | uppercase }} <br/>
+<hr/>
+lowercase 小写转换 {{ "WHAT A WONDERFUL WORLD" | lowercase }} <br/>
+<hr/>
+	<ez-app></ez-app>
+    <script type="text/typescript">
+    // 1 导入组件
+    // 2 定义组件
+    // 3 定义一个渲染对象
+    // 4 启动组件进行渲染
+    // 5 使用自定义的dom节点   一定要放在script 标签外  body内
+        import {Component} from "angular2/core";
+        import {bootstrap} from "angular2/platform/browser";
+
+        @Component({
+            selector:"ez-app",
+            template:`
+                <div>
+                    <h1>截取 12345678:[表示从第1位截取到第3位]</h1>
+                    <h1>结果： {{"12345678" |slice:1:3}}</h1><hr/>
+
+                    <h1>保留： 5678.1245</h1>
+                    <h1>结果： {{5678.1245 |number:'2.2-2'}}</h1><hr/>
+
+                    <h1>格式化时间 day</h1>
+                    <h1>结果： {{ day | date:'yyyy-MM-dd HH:mm:ss'}}</h1><hr/>
+
+                    <h1>json转换</h1>
+                    <h1>结果： {{ {x:1,y:2} | json }}</h1><hr/>
+
+                    <h1>uppercase 大写转换  xiaomo</h1>
+                    <h1>结果： {{ "xiaomo" | uppercase }}</h1><hr/>
+
+                     <h1>lowercase 小写转换   XIAOMO</h1>
+                    <h1>结果： {{ "XIAOMO" | lowercase }}</h1><hr/>
+
+                </div>
+            `
+        })
+
+        class EzApp{
+            constructor(){
+                this.day = new Date();
+            }
+        }
+
+        bootstrap(EzApp);
+
+
+    </script>
+</body>
+</html>

@@ -2,25 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>最基本的写法</title>
+    <title>管道命令</title>
     <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
 </head>
 <body>
-管道参数
-number 2.2-2 保留小数  {{avgScore() | number:'2.2-2'}} <br/>
-<hr/>
-data  yyyyMMYDD 格式化  {{ day | data:'yyMMdd'}}<br/>
-<hr/>
-json    转成json {{ {x:1,y:2} | json }} <br/>
-<hr/>
-percent 转换成百分比  {{ 1.23456 | percent:'1.2-3' }}<br/>
-<hr/>
-slice   截取  {{ '01234567890' | slice:1:4 }} <br/>
-<hr/>
-uppercase 大写转换  {{ "this is a demo" | uppercase }} <br/>
-<hr/>
-lowercase 小写转换 {{ "WHAT A WONDERFUL WORLD" | lowercase }} <br/>
-<hr/>
+
 <ez-app></ez-app>
 <script type="text/typescript">
     // 1 导入组件
