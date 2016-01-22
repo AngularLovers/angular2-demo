@@ -6,6 +6,21 @@
     <script type="text/javascript" src="../dist/angular2.beta.stack.min.js"></script>
 </head>
 <body>
+管道参数
+number 2.2-2 保留小数  {{avgScore() | number:'2.2-2'}} <br/>
+<hr/>
+data  yyyyMMYDD 格式化  {{ day | data:'yyMMdd'}}<br/>
+<hr/>
+json    转成json {{ {x:1,y:2} | json }} <br/>
+<hr/>
+percent 转换成百分比  {{ 1.23456 | percent:'1.2-3' }}<br/>
+<hr/>
+slice   截取  {{ '01234567890' | slice:1:4 }} <br/>
+<hr/>
+uppercase 大写转换  {{ "this is a demo" | uppercase }} <br/>
+<hr/>
+lowercase 小写转换 {{ "WHAT A WONDERFUL WORLD" | lowercase }} <br/>
+<hr/>
 <ez-app></ez-app>
 <script type="text/typescript">
     // 1 导入组件
@@ -23,7 +38,7 @@
         selector:"ez-app",
         template:`
             <h1>管道 /Pipe</h1>
-            <div *ngFor ="#name of data;#i=index">{{index}}. {{name.name}}:{{name.score}} </div>
+            <div *ngFor ="#data of datas;#i=index">{{index}}. {{data.name}}:{{data.score}} </div>
             <hr>
             <div>{{avgScore() | number:'2.2-2'}}</div>
         `,
@@ -32,7 +47,7 @@
     })
         class EzApp{
         constructor(){
-            this.data=[
+            this.datas=[
             {name:'John',score:89},
             {name:'Mike',score:72},
             {name:'Linda',score:93.5},
@@ -44,7 +59,7 @@
             {name:'Tom',score:99}]
               }
             avgScore(){
-    	        return this.data.map(a=>a.score).reduce((a,b) => a+b , 0) / this.data.length;
+    	        return this.datas.map(a=>a.score).reduce((a,b) => a+b , 0) / this.datas.length;
         }
 }
 
