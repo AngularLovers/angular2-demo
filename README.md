@@ -1,7 +1,7 @@
 # angular2-lesson-lib
 文件清单：
 
-* index.html - 测试文件
+* demo - 测试文件
 * gulpfile.js - 工程文件
 * dist/angular2.beta.stack.min.js - 合并的库文件
 * src/angular2-pollyfills.js - 浏览器功能增强库
