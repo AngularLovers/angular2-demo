@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>xiaomo</title>
+    <base href="/">
 </head>
 <body>
-测试一下热记载
+<!--<div ng-controller="MyController">-->
+    <!--<h1>{{clock.now}}</h1>-->
+<!--</div>-->
+<div>
+    <input type="text" name="name" ng-model="name" title="">
+</div>
+<h1>hello : <span ng-bind="name"></span></h1>
+<app></app>
 </body>
 </html>
