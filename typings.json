@@ -1,5 +1,5 @@
 {
-  "name": "ng-book2-forms",
+  "name": "ng-book2-demo",
   "version": false,
   "ambientDependencies": {
     "moment": "github:DefinitelyTyped/DefinitelyTyped/moment/moment.d.ts#b2345aee407127928f247165c91e18bd7dc1a14a",
