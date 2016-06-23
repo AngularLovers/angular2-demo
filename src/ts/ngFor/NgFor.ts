@@ -1,10 +1,9 @@
 import {Component} from '@angular/core';
 
-require('./ngFor.scss');
-
 @Component({
     selector: 'ng-for',
-    template: require('ngFor.html')
+    styles:[require('./NgFor.scss')],
+    template: require('NgFor.html')
 })
 
 export class NgForComponent {

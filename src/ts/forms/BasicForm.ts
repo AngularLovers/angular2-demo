@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
 import {FORM_DIRECTIVES,FormBuilder,ControlGroup} from '@angular/common';
 
-require('basic-form.scss');
+
 
 @Component({
     selector: 'basic-form',
-    template: require('./basic-form.html'),
+    styles:[require('./BasicForm.scss')],
+    template: require('./BasicForm.html'),
     directives: [FORM_DIRECTIVES]
 
 })

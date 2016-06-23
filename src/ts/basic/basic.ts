@@ -1,9 +1,8 @@
 import {Component} from '@angular/core';
 
-require('./basic.scss');
-
 @Component({
     selector: 'basic',
+    styles:[require('./basic.scss')],
     template: require('./basic.html')
 })
 

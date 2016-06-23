@@ -112,7 +112,9 @@ function makeConfig(options) {
         { test: /\.(png|jpg|gif|ico)$/,   loader: 'file-loader?limit=50000&name=[path][name].[ext]' },
         { test: /\.json$/, loader: 'json' },
         { test: /^.*\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')},
-        { test: /\.scss$/, loaders: ['style-loader',
+        { test: /\.scss$/, loaders: [
+                                     'raw-loader',
+                                     'style-loader',
                                      ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap'),
                                      'sass-loader' +
                                      '?outputStyle=expanded&' +
