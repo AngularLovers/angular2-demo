@@ -3,15 +3,18 @@
  */
 import {Component} from '@angular/core'; 
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import {DemoFormSku} from './forms/demo_form_sku';
 
-require('bootstrap/dist/css/bootstrap.css');
-require('../css/styles.css');
+import {BasicFormComponent} from './forms/basic-form';
+import {BasicComponent} from './basic/basic';
+
 require('../images/favicon.ico');
 
 @Component({
-    selector: 'forms-demo-app',
-    directives: [DemoFormSku],
+    selector: 'basic-form',
+    directives: [BasicFormComponent,BasicComponent],
+    styles:[
+        require('./app.scss')
+    ],
     template: require('./app.html')
 })
 class FormsDemoApp {

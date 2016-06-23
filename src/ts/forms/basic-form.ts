@@ -1,12 +1,16 @@
 import {Component} from '@angular/core';
 import {FORM_DIRECTIVES,FormBuilder,ControlGroup} from '@angular/common';
-import 'demo-form-sku.scss';
+
 @Component({
-    selector: 'demo-form-sku',
-    directives: [FORM_DIRECTIVES],
-    template: require('./demo-form-sku.html')
+    selector: 'basic-form',
+    styles:[
+        require('basic-form.scss')
+    ],
+    template: require('./basic-form.html'),
+    directives: [FORM_DIRECTIVES]
+
 })
-export class DemoFormSku {
+export class BasicFormComponent {
 
     myForm:ControlGroup;
 

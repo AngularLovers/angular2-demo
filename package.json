@@ -20,7 +20,7 @@
     "@angular/router": "2.0.0-rc.2",
     "@angular/router-deprecated": "2.0.0-rc.2",
     "base64id": "0.1.0",
-    "bootstrap": "^3.3.6",
+    "bootstrap": "^4.0.0-alpha.2",
     "bootstrap-sass": "3.3.5",
     "chunk-manifest-webpack-plugin": "0.0.1",
     "core-js": "2.2.2",

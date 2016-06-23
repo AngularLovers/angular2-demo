@@ -20,7 +20,7 @@
     "jsdoc-format": true,
     "max-line-length": [
       true,
-      80
+      160
     ],
     "member-ordering": [
       true,
