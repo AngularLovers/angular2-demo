@@ -2,6 +2,7 @@
 .idea
 node_modules
 dist
+.webpack.json
 npm*log
 *.map
 typings

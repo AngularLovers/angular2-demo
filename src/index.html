@@ -1,21 +1,23 @@
 <!doctype html>
-<html>
-  <head>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
     <title>Angular 2 Demo App</title>
-    <link rel="icon" href="images/favicon.ico" />
+    <link rel="icon" href="images/favicon.ico"/>
 
     {% for (var css in o.htmlWebpackPlugin.files.css) { %}
-      <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
+    <link href="{%=o.htmlWebpackPlugin.files.css[css] %}" rel="stylesheet">
     {% } %}
-  </head>
-  <body>
+</head>
+<body>
 
-    <div class="ui main text container">
-      <forms-demo-app></forms-demo-app>
-    </div>
+<div class="ui main text container">
+    <forms-demo-app></forms-demo-app>
+</div>
 
-    <script src="core.js"></script>
-    <script src="vendor.js"></script>
-    <script src="bundle.js"></script>
-  </body>
+<script src="common.js"></script>
+<script src="vendor.js"></script>
+<script src="bundle.js"></script>
+</body>
+</body>
 </html>

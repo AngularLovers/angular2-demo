@@ -1,7 +1,6 @@
 var webpack               = require('webpack'),
     ReloadPlugin          = require('webpack-reload-plugin'),
     path                  = require('path'),
-    ChunkManifestPlugin   = require('chunk-manifest-webpack-plugin'),
     HtmlWebpackPlugin     = require('html-webpack-plugin'),
     WebpackNotifierPlugin = require('webpack-notifier'),
     ExtractTextPlugin     = require('extract-text-webpack-plugin');
@@ -18,9 +17,8 @@ var cwd = process.cwd();
 var DEBUG = !argv.release;
 var isDevServer = process.argv.join('').indexOf('webpack-dev-server') > -1;
 var version = require(path.resolve(cwd,'package.json')).version;
-var reloadHost = '0.0.0.0';
+var reloadHost = 'localhost';
 var npmRoot = __dirname + '/node_modules';
-var vendorRoot = __dirname + '/src/js/vendor';
 var appDir = __dirname + '/src';
 
 var entry = ['app.ts'];
@@ -54,6 +52,9 @@ function makeConfig(options) {
     devServer: {
       inline: true,
       colors: true,
+      header:{
+        "Access-Control-Allow-Origin":"*"
+      },
       contentBase: path.resolve(cwd, 'dist'),
       publicPath: '/'
     },
@@ -61,7 +62,7 @@ function makeConfig(options) {
     output: {
       path: path.resolve(cwd, 'dist'),
       filename: '[name].js',
-      publicPath: '/', 
+      publicPath: '/',
       chunkFilename: '[id].bundle.js',
 
       // Hot Module Replacement settings:
@@ -71,7 +72,7 @@ function makeConfig(options) {
 
     plugins: [
       new webpack.IgnorePlugin(/spec\.js$/),
-      new webpack.optimize.CommonsChunkPlugin('core.js'),
+      new webpack.optimize.CommonsChunkPlugin('common.js'),
       new ExtractTextPlugin('styles.css'),
       new webpack.DefinePlugin({
         VERSION: JSON.stringify(version),
@@ -96,7 +97,7 @@ function makeConfig(options) {
       modulesDirectories: [
         'node_modules', 'src', 'src/ts', '.'
       ],
-      extensions: ['', '.ts', '.js', '.json', '.css'],
+      extensions: ['', '.ts', '.js', '.json', '.css','.scss'],
       alias: {
         'src': 'src',
         'scripts': npmRoot
@@ -110,7 +111,6 @@ function makeConfig(options) {
       loaders: [
         { test: /\.(png|jpg|gif|ico)$/,   loader: 'file-loader?limit=50000&name=[path][name].[ext]' },
         { test: /\.json$/, loader: 'json' },
-        // { test: /^(?!.*\.min\.css$).*\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')},
         { test: /^.*\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')},
         { test: /\.scss$/, loaders: ['style-loader',
                                      ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap'),
@@ -144,5 +144,4 @@ function makeConfig(options) {
 
 var config = makeConfig(argv);
 
-console.log(require('util').inspect(config, {depth: 10}));
 module.exports = config;

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build":"npm run clean && webpack --progress --color",
+    "build": "npm run clean && webpack --progress --color",
     "start": "./node_modules/.bin/webpack-dev-server --progress --color"
   },
   "author": "xiaomo <83387856@qq.com>",
@@ -20,6 +20,7 @@
     "@angular/router": "2.0.0-rc.2",
     "@angular/router-deprecated": "2.0.0-rc.2",
     "base64id": "0.1.0",
+    "bootstrap": "^3.3.6",
     "bootstrap-sass": "3.3.5",
     "chunk-manifest-webpack-plugin": "0.0.1",
     "core-js": "2.2.2",
