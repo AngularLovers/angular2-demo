@@ -2,7 +2,7 @@
 
 ## 一、目录
 - dist 编译目录
-- src
+- src   
  -- images      图片   
  -- ts          源码   
  -- index.html  入口html   
