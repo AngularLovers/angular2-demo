@@ -3,9 +3,9 @@
 ## 一、目录
 - dist 编译目录
 - src
- -- images      图片
- -- ts          源码
- -- index.html  入口html
+ -- images      图片   
+ -- ts          源码   
+ -- index.html  入口html   
 - typings typescript d.ts
 - .babelrc babel编译环境
 - package.json 包管理
