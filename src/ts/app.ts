@@ -8,16 +8,14 @@ import {BasicFormComponent} from './forms/basic-form';
 import {BasicComponent} from './basic/basic';
 
 require('../images/favicon.ico');
+require('./app.scss');
 
 @Component({
-    selector: 'basic-form',
+    selector: 'my-app',
     directives: [BasicFormComponent,BasicComponent],
-    styles:[
-        require('./app.scss')
-    ],
     template: require('./app.html')
 })
-class FormsDemoApp {
+class MyApp {
 }
 
-bootstrap(FormsDemoApp);
+bootstrap(MyApp);
