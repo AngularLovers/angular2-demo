@@ -8,6 +8,8 @@ import {BasicFormComponent} from './component/forms/BasicForm';
 import {BasicComponent} from './component/basic/Basic';
 import {NgForComponent} from './component/ngFor/NgFor';
 import {ClickEventComponent} from './component/clickEvent/ClickEvent';
+import {ComponentsComponent} from './component/components/Components';
+
 require('../images/favicon.ico');
 
 @Component({
@@ -17,7 +19,8 @@ require('../images/favicon.ico');
         BasicFormComponent,
         BasicComponent,
         NgForComponent,
-        ClickEventComponent
+        ClickEventComponent,
+        ComponentsComponent
     ],
     template: require('./App.html')
 })
