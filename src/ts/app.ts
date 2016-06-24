@@ -9,6 +9,7 @@ import {BasicComponent} from './component/basic/Basic';
 import {NgForComponent} from './component/ngFor/NgFor';
 import {ClickEventComponent} from './component/clickEvent/ClickEvent';
 import {ComponentsComponent} from './component/components/Components';
+import {HostPropertyComponent} from './component/hostProperty/HostProperty';
 
 require('../images/favicon.ico');
 
@@ -20,7 +21,8 @@ require('../images/favicon.ico');
         BasicComponent,
         NgForComponent,
         ClickEventComponent,
-        ComponentsComponent
+        ComponentsComponent,
+        HostPropertyComponent
     ],
     template: require('./App.html')
 })
