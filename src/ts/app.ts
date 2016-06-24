@@ -4,10 +4,10 @@
 import {Component} from '@angular/core'; 
 import { bootstrap } from '@angular/platform-browser-dynamic';
 
-import {BasicFormComponent} from './forms/BasicForm';
-import {BasicComponent} from './basic/Basic';
-import {NgForComponent} from './ngFor/NgFor';
-import {ClickEventComponent} from './clickEvent/ClickEvent';
+import {BasicFormComponent} from './component/forms/BasicForm';
+import {BasicComponent} from './component/basic/Basic';
+import {NgForComponent} from './component/ngFor/NgFor';
+import {ClickEventComponent} from './component/clickEvent/ClickEvent';
 require('../images/favicon.ico');
 
 @Component({
