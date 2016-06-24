@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 class="card-title">validate form</h2>
+        The product name is:  <label class="label label-info">{{productName}}
+    </label>
+
+    <form [ngFormModel]="myForm"
+          (ngSubmit)="onSubmit(myForm.value)"
+          class="form-horizontal">
+
+        <div class="field">
+            <label for="productNameInput">Product Name</label>
+            <input type="text"
+                   id="productNameInput"
+                   placeholder="please input"
+                   [ngFormControl]="myForm.find('productName')"
+                   [(ngModel)]="productName">
+        </div>
+        <label *ngIf="!myForm.valid" class="label label-danger">Form is invalid</label><br/>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>

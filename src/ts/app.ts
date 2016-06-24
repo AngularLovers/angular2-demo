@@ -10,6 +10,7 @@ import {NgTagComponent} from './component/ngTag/NgTag';
 import {ClickEventComponent} from './component/clickEvent/ClickEvent';
 import {ComponentsComponent} from './component/components/Components';
 import {HostPropertyComponent} from './component/hostProperty/HostProperty';
+import {ValidateFormComponent} from './component/validateForm/validateForm';
 
 require('../images/favicon.ico');
 
@@ -22,7 +23,8 @@ require('../images/favicon.ico');
         NgTagComponent,
         ClickEventComponent,
         ComponentsComponent,
-        HostPropertyComponent
+        HostPropertyComponent,
+        ValidateFormComponent
     ],
     template: require('./App.html')
 })
