@@ -1,0 +1,36 @@
+<div>
+    <h2>ngFor</h2>
+    <ul class="list-group" *ngFor="let item of list">
+        <li class="list-group-item">{{item.name}}</li>
+    </ul>
+</div>
+<hr>
+<div>
+    <h2>ngIf</h2>
+   <ul *ngFor="let item of list">
+       <li *ngIf="item.name=='xiaomo'" class="list-group-item">{{item.name}}</li>
+   </ul>
+</div>
+<hr>
+<div>
+    <h2>ngSwitch</h2>
+        <div [ngSwitch]="ngSwitchList">
+            <div *ngSwitchCase="xiaomo">xiaomo</div>
+            <div *ngSwitchCase="xiaoming">xiaoming</div>
+            <div *ngSwitchDefault>默认</div>
+        </div>
+</div>
+<hr>
+<div>
+    <h2>ngStyle</h2>
+    <div [ngStyle]="{'background-color': ngStyleList.backgroundColor,'color':ngStyleList.color}" [style.font-size]="30">
+        背景 :{{ngStyleList.backgroundColor}} <br/>
+        字体颜色: {{ngStyleList.color}}
+    </div>
+</div>
+<hr>
+<div>
+    <h2>ngClass</h2>
+    左边是class名[要用<code>''</code>包起来]，右边是一个true|false表达式<br/>
+    <button class="btn" [ngClass]="{'btn-danger': ngStyleList}">测试</button>
+</div>

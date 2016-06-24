@@ -6,7 +6,7 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
 
 import {BasicFormComponent} from './component/forms/BasicForm';
 import {BasicComponent} from './component/basic/Basic';
-import {NgForComponent} from './component/ngFor/NgFor';
+import {NgTagComponent} from './component/ngTag/NgTag';
 import {ClickEventComponent} from './component/clickEvent/ClickEvent';
 import {ComponentsComponent} from './component/components/Components';
 import {HostPropertyComponent} from './component/hostProperty/HostProperty';
@@ -19,7 +19,7 @@ require('../images/favicon.ico');
     directives: [
         BasicFormComponent,
         BasicComponent,
-        NgForComponent,
+        NgTagComponent,
         ClickEventComponent,
         ComponentsComponent,
         HostPropertyComponent
