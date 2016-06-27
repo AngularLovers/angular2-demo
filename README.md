@@ -14,8 +14,11 @@
 - vendor.ts 基础依赖
 - webpack.config.js  webpack配置
 
-二、 说明
+## 二、 说明
 
 index.html中会把所有示例的组件加入并显示效果
 
+## 三、 运行方法
 
+### 1. `npm install`
+### 2. `npm run start`
