@@ -1,4 +1,4 @@
-# angular-lesson-lib
+# angular-lesson
 
 ## 一、目录
 - dist 编译目录
