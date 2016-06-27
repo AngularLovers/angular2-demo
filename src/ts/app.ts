@@ -1,16 +1,19 @@
 /* 
  * Angular
  */
-import {Component} from '@angular/core'; 
+import { Component } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
+import { ROUTER_PROVIDERS } from '@angular/router';
+import { HTTP_PROVIDERS } from '@angular/http';
 
-import {BasicFormComponent} from './component/forms/BasicForm';
-import {BasicComponent} from './component/basic/Basic';
-import {NgTagComponent} from './component/ngTag/NgTag';
-import {ClickEventComponent} from './component/clickEvent/ClickEvent';
-import {ComponentsComponent} from './component/components/Components';
-import {HostPropertyComponent} from './component/hostProperty/HostProperty';
-import {ValidateFormComponent} from './component/validateForm/validateForm';
+import { BasicFormComponent } from './component/forms/BasicForm';
+import { BasicComponent } from './component/basic/Basic';
+import { NgTagComponent } from './component/ngTag/NgTag';
+import { ClickEventComponent } from './component/clickEvent/ClickEvent';
+import { ComponentsComponent } from './component/components/Components';
+import { HostPropertyComponent } from './component/hostProperty/HostProperty';
+import { ValidateFormComponent } from './component/validateForm/validateForm';
+import { HttpServiceComponent } from './component/httpService/HttpService';
 
 require('../images/favicon.ico');
 
@@ -24,11 +27,15 @@ require('../images/favicon.ico');
         ClickEventComponent,
         ComponentsComponent,
         HostPropertyComponent,
-        ValidateFormComponent
+        ValidateFormComponent,
+        HttpServiceComponent
     ],
     template: require('./App.html')
 })
 class MyApp {
 }
 
-bootstrap(MyApp);
+bootstrap(MyApp,[
+    ROUTER_PROVIDERS,
+    HTTP_PROVIDERS
+]);
