@@ -20,5 +20,7 @@ index.html中会把所有示例的组件加入并显示效果
 
 ## 三、 运行方法
 
-### 1. `npm install`
-### 2. `npm run start`
+### 1. 下载依赖  
+`npm install`
+### 2. 运行项目  
+`npm run start`
