@@ -7,18 +7,19 @@
 <hr>
 <div>
     <h2>ngIf</h2>
-   <ul *ngFor="let item of list">
-       <li *ngIf="item.name=='xiaomo'" class="list-group-item">{{item.name}}</li>
-   </ul>
+    <ul *ngFor="let item of list">
+        <li *ngIf="item.name=='xiaomo'" class="list-group-item">哇,我在list列表中找到了 <span class="label label-info">{{item.name}}</span>
+        </li>
+    </ul>
 </div>
 <hr>
 <div>
     <h2>ngSwitch</h2>
-        <div [ngSwitch]="ngSwitchList">
-            <div *ngSwitchCase="xiaomo">xiaomo</div>
-            <div *ngSwitchCase="xiaoming">xiaoming</div>
-            <div *ngSwitchDefault>默认</div>
-        </div>
+    <div [ngSwitch]="ngSwitchList">
+        <div *ngSwitchCase="xiaomo">xiaomo</div>
+        <div *ngSwitchCase="xiaoming">xiaoming</div>
+        <div *ngSwitchDefault>默认</div>
+    </div>
 </div>
 <hr>
 <div>
