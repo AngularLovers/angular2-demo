@@ -1,3 +1,5 @@
 <div>
-    Hello {{name}}
+    <ul *ngFor="let item of users">
+        <li>Hello {{item.name}}</li>
+    </ul>
 </div>

@@ -1,4 +1,8 @@
 import {Component} from '@angular/core';
+import {UserModel} from './../../model/UserModel';
+
+let xiaomo:UserModel = new UserModel( 'xiaomo');
+let xiaoming:UserModel = new UserModel('xiaoming');
 
 @Component({
     selector: 'basic',
@@ -7,8 +11,9 @@ import {Component} from '@angular/core';
 })
 
 export class BasicComponent {
-    name:string;
+
+    users:Object;
     constructor() {
-        this.name = 'xiaomo';
+        this.users= [ xiaomo,xiaoming];
     };
 }
