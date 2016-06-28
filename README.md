@@ -21,7 +21,8 @@ index.html中会把所有示例的组件加入并显示效果
 ## 三、 运行方法
 
 ### 1. 下载依赖  
-`npm install`
+`npm install && typings install`
+如果typings 命令不可用  先全局安装一下typings  `npm install -g typings`
 ### 2. 运行项目  
 `npm run start`
 ### 3. 访问路径
