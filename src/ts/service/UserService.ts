@@ -5,8 +5,6 @@ import {Observable} from 'rxjs/Rx';
 
 @Injectable()
 export class UserService {
-    data:any;
-
     constructor(public http:Http) {
         this.http = http;
     }

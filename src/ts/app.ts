@@ -3,7 +3,6 @@
  */
 import { Component } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import { ROUTER_PROVIDERS } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 
 import { BasicFormComponent } from './component/forms/BasicForm';
@@ -36,6 +35,5 @@ class MyApp {
 }
 
 bootstrap(MyApp,[
-    ROUTER_PROVIDERS,
     HTTP_PROVIDERS
 ]);
