@@ -1,29 +1,25 @@
-import { Component } from '@angular/core';
-import {
-    CORE_DIRECTIVES,
-    FORM_DIRECTIVES,
-    FormBuilder,
-    ControlGroup,
-    Validators
-} from '@angular/common';
+import {Component} from "@angular/core";
+import {Hero} from "./../../model/HeroModel";
 
 @Component({
     selector: 'validate-form',
-    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
-    styles:[require('./ValidateForm.scss')],
     template: require('./ValidateForm.html')
 })
 export class ValidateFormComponent {
-    myForm:ControlGroup;
-    productName:string;
+    powers = ['Really Smart', 'Super Flexible',
+        'Super Hot', 'Weather Changer'];
+    model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
+    submitted = false;
 
-    constructor(fb:FormBuilder) {
-        this.myForm = fb.group({
-            'productName': ['', Validators.required]
-        });
+    onSubmit() {
+        this.submitted = true;
     }
 
-    onSubmit(value:string):void {
-        console.log('you submitted value: ', value);
+    active = true;
+
+    newHero() {
+        this.model = new Hero(42, '', '');
+        this.active = false;
+        setTimeout(() => this.active = true, 0);
     }
 }
