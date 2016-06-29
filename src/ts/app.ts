@@ -2,8 +2,6 @@
  * Angular
  */
 import { Component } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { HTTP_PROVIDERS } from '@angular/http';
 
 import { BasicFormComponent } from './component/forms/BasicForm';
 import { BasicComponent } from './component/basic/Basic';
@@ -35,9 +33,6 @@ require('../images/favicon.ico');
     ],
     template: require('./App.html')
 })
-class MyApp {
+export class AppComponent {
 }
 
-bootstrap(MyApp,[
-    HTTP_PROVIDERS
-]);
