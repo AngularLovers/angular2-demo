@@ -13,6 +13,8 @@ import { ComponentsComponent } from './component/components/Components';
 import { HostPropertyComponent } from './component/hostProperty/HostProperty';
 import { ValidateFormComponent } from './component/validateForm/validateForm';
 import { HttpServiceComponent } from './component/httpService/HttpService';
+import { KeyupEventComponent } from './component/keyupEvent/KeyupEvent';
+import { EnterBlurEventComponent } from './component/EnterBlurEvent/EnterBlurEvent';
 
 require('../images/favicon.ico');
 
@@ -27,7 +29,9 @@ require('../images/favicon.ico');
         ComponentsComponent,
         HostPropertyComponent,
         ValidateFormComponent,
-        HttpServiceComponent
+        HttpServiceComponent,
+        KeyupEventComponent,
+        EnterBlurEventComponent
     ],
     template: require('./App.html')
 })
