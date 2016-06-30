@@ -14,7 +14,7 @@ import { HostPropertyComponent } from './component/hostProperty/HostProperty';
 import { ValidateFormComponent } from './component/validateForm/validateForm';
 import { HttpServiceComponent } from './component/httpService/HttpService';
 import { KeyupEventComponent } from './component/keyupEvent/KeyupEvent';
-import { EnterBlurEventComponent } from './component/EnterBlurEvent/EnterBlurEvent';
+import { EnterBlurEventComponent } from './component/enterBlurEvent/EnterBlurEvent';
 
 require('../images/favicon.ico');
 

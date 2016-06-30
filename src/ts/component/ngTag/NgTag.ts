@@ -29,4 +29,10 @@ export class NgTagComponent {
             'backgroundColor':'green'
         };
     };
+
+    myVal:number = 0;
+    changeValue($event):void{
+        console.log($event.target.value);// 输出选中的值设给myVal
+        this.myVal = $event.target.value;
+}
 }

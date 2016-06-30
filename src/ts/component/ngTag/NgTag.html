@@ -15,11 +15,20 @@
 <hr>
 <div>
     <h2>ngSwitch</h2>
-    <div [ngSwitch]="ngSwitchList">
-        <div *ngSwitchCase="xiaomo">xiaomo</div>
-        <div *ngSwitchCase="xiaoming">xiaoming</div>
-        <div *ngSwitchDefault>默认</div>
-    </div>
+        <input name="myVal" type="radio" title="" value="1" (click)="changeValue($event)">1
+        <input name="myVal" type="radio" title="" value="2" (click)="changeValue($event)">2
+        <input name="myVal" type="radio" title="" value="3" (click)="changeValue($event)">3
+        <input name="myVal" type="radio" title="" value="4" (click)="changeValue($event)">4
+        <input name="myVal" type="radio" title="" value="5" (click)="changeValue($event)">5
+        <hr>
+       <span [ngSwitch]="myVal">
+          <span *ngSwitchCase="'1'">ONE</span>
+          <span *ngSwitchCase="'2'">TWO</span>
+          <span *ngSwitchCase="'3'">THREE</span>
+          <span *ngSwitchCase="'4'">FOUR</span>
+          <span *ngSwitchCase="'5'">FIVE</span>
+          <span *ngSwitchDefault>other</span>
+	    </span>
 </div>
 <hr>
 <div>
