@@ -3,7 +3,6 @@
  */
 import { Component } from '@angular/core';
 
-import { BasicFormComponent } from './component/forms/BasicForm';
 import { BasicComponent } from './component/basic/Basic';
 import { NgTagComponent } from './component/ngTag/NgTag';
 import { ClickEventComponent } from './component/clickEvent/ClickEvent';
@@ -20,7 +19,6 @@ require('../images/favicon.ico');
     selector: 'my-app',
     styles:[require('./App.scss')],
     directives: [
-        BasicFormComponent,
         BasicComponent,
         NgTagComponent,
         ClickEventComponent,
