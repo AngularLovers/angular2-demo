@@ -21,7 +21,7 @@ var reloadHost = 'localhost';
 var npmRoot = __dirname + '/node_modules';
 var appDir = __dirname + '/src';
 
-var entry = ['app.ts'];
+var entry = ['main.ts'];
 
 if (isDevServer) {
   entry.unshift('webpack-dev-server/client?http://'+reloadHost+':8080');
@@ -104,10 +104,6 @@ function makeConfig(options) {
       }
     },
     module: {
-      preLoaders: [
-        { test: /\.ts$/, loader: 'tslint' }
-      ],
-
       loaders: [
         { test: /\.(png|jpg|gif|ico)$/,   loader: 'file-loader?limit=50000&name=[path][name].[ext]' },
         { test: /\.json$/, loader: 'json' },

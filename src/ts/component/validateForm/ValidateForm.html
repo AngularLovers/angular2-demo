@@ -1,22 +1,52 @@
 <div class="container">
-    <h2 class="card-title">validate form</h2>
-        The product name is:  <label class="label label-info">{{productName}}
-    </label>
-
-    <form [ngFormModel]="myForm"
-          (ngSubmit)="onSubmit(myForm.value)"
-          class="form-horizontal">
-
-        <div class="field">
-            <label for="productNameInput">Product Name</label>
-            <input type="text"
-                   id="productNameInput"
-                   placeholder="please input"
-                   [ngFormControl]="myForm.find('productName')"
-                   [(ngModel)]="productName">
+    <div  [hidden]="submitted">
+        <h1>Hero Form</h1>
+        <form *ngIf="active" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" required
+                       [(ngModel)]="model.name"
+                       name="name"  #name="ngModel" >
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Name is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="alterEgo">Alter Ego</label>
+                <input type="text" class="form-control"
+                       [(ngModel)]="model.alterEgo"
+                       name="alterEgo" >
+            </div>
+            <div class="form-group">
+                <label for="power">Hero Power</label>
+                <select class="form-control" required
+                        [(ngModel)]="model.power"
+                        name="power" #power="ngModel" >
+                    <option *ngFor="let p of powers" [value]="p">{{p}}</option>
+                </select>
+                <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+                    Power is required
+                </div>
+            </div>
+            <button type="submit" class="btn btn-default" [disabled]="!heroForm.form.valid">Submit</button>
+            <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+        </form>
+    </div>
+    <div [hidden]="!submitted">
+        <h2>You submitted the following:</h2>
+        <div class="row">
+            <div class="col-xs-3">Name</div>
+            <div class="col-xs-9  pull-left">{{ model.name }}</div>
         </div>
-        <label *ngIf="!myForm.valid" class="label label-danger">Form is invalid</label><br/>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
+        <div class="row">
+            <div class="col-xs-3">Alter Ego</div>
+            <div class="col-xs-9 pull-left">{{ model.alterEgo }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-3">Power</div>
+            <div class="col-xs-9 pull-left">{{ model.power }}</div>
+        </div>
+        <br>
+        <button class="btn btn-default" (click)="submitted=false">Edit</button>
+    </div>
 </div>
