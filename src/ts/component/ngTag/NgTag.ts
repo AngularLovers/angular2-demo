@@ -35,4 +35,11 @@ export class NgTagComponent {
         console.log($event.target.value);// 输出选中的值设给myVal
         this.myVal = $event.target.value;
 }
+
+    classes:any={};
+    fn():any {
+        return this.classes =  {
+            'btn-primary':true
+        };
+    }
 }

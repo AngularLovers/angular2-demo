@@ -41,6 +41,7 @@
 <hr>
 <div>
     <h2>ngClass</h2>
-    左边是class名[要用<code>''</code>包起来]，右边是一个true|false表达式<br/>
+    左边是class名[要用<code>''</code>包起来]，右边是一个true|false表达式或者是一个方法<br/>
     <button class="btn" [ngClass]="{'btn-danger': ngStyleList}">测试</button>
+    <button class="btn" [ngClass]="fn()">fn</button>
 </div>
