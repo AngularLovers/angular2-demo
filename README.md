@@ -1,4 +1,4 @@
-# angular- esson
+# angular-esson
 
 ## 一、目录
 - dist 编译目录
